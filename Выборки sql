@@ -1,0 +1,21 @@
+USE Step_qa;
+SELECT Price FROM Orders
+WHERE Price > 5000 AND Customer_id is NULL
+ORDER BY Price DESC;
+
+SELECT Price FROM Orders
+WHERE Price > 5000 AND Customer_id is NULL
+ORDER BY Price;
+
+SELECT * FROM Orders
+RIGHT JOIN Customers ON Customer_id = Order_id
+WHERE Order_id > 5 
+RIGHT JOIN Customers ON Customer_id = Order_id
+ORDER BY Customer_Order_id
+RIGHT JOIN Customers ON Customer_id = Order_id;
+
+SELECT A.Address, B.Last_Name, B.First_Name, B.Customer_id 
+FROM Customers A, Customers B 
+WHERE A.Customer_id <> B.Customer_id 
+and A.Address = B.Address 
+ORDER BY A.Address;
